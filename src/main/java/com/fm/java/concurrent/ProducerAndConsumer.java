@@ -31,7 +31,7 @@ public class ProducerAndConsumer {
                         consumer.notifyAll();
                     }
                 }
-            } catch (Exception e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
@@ -58,7 +58,7 @@ public class ProducerAndConsumer {
                         producer.notifyAll();
                     }
                 }
-            } catch (Exception e) {
+            } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
