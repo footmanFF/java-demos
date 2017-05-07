@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.fm.framework.base.Employees">
+    <select id="getEmployees" resultType="com.fm.framework.base.Employees">
+        select * from Employees where emp_no = #{emp_no}
+    </select>
+</mapper>
