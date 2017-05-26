@@ -1,7 +1,9 @@
 package com.fm.framework.dubbo;
 
-import cn.com.weidai.rdc.api.UserInfoApi;
-import cn.com.weidai.rdc.entity.api.UserInfoResult;
+import com.weidai.cf.rdc.api.UserInfoApi;
+import com.weidai.cf.rdc.entity.FieldInfo;
+import com.weidai.cf.rdc.entity.Result;
+import com.weidai.cf.rdc.entity.UserBaseInfo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,9 +22,10 @@ public class DubboTest {
 
     @Test
     public void rdcApiTest(){
-        UserInfoResult result = userInfoApi.getUserInfo(null);
+        UserBaseInfo userBaseInfo = new UserBaseInfo();
+        Result<FieldInfo> result = userInfoApi.getUserInfo(userBaseInfo);
         System.out.println("start");
-        System.out.println(result.getResult());
+        System.out.println(result.getData());
         System.out.println("finish");
     }
 

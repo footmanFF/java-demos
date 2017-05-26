@@ -11,9 +11,18 @@ import java.sql.Statement;
  */
 public class HsqldbTest {
 
-    static String createSql = "CREATE TABLE rule_field (\n" +
+    static String createSql = "CREATE TABLE api_result_handle (\n" +
             "  id int(11) NOT NULL AUTO_INCREMENT,\n" +
-            "  `code` varchar(150) NOT NULL,\n" +
+            "  api_code varchar(50) NOT NULL,\n" +
+            "  result varchar(30) DEFAULT NULL,\n" +
+            "  handle_type tinyint(4) NOT NULL,\n" +
+            "  handle_value varchar(30) DEFAULT NULL,\n" +
+            "  before_id int(11) NOT NULL,\n" +
+            "  return_to int(11) DEFAULT NULL,\n" +
+            "  create_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,\n" +
+            "  update_time datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,\n" +
+            "  create_id varchar(30) DEFAULT NULL,\n" +
+            "  update_id varchar(30) DEFAULT NULL,\n" +
             "  PRIMARY KEY (id)\n" +
             ")";
     static Connection connection;
@@ -27,11 +36,20 @@ public class HsqldbTest {
         ResultSet resultSet = null;
         statement = connection.createStatement();
         statement.execute(createSql);
-        statement.execute("insert into rule_field(id, `code`) values (10, '123')");
-        resultSet = statement.executeQuery("select id, `code` from rule_field");
+        statement.execute("INSERT INTO api_result_handle (id, api_code, result, handle_type, handle_value, before_id, return_to, create_time, update_time, create_id, update_id)\n" +
+                "VALUES\n" +
+                "\t(26,'loan_apply','STRATEGY_REFUSE',1,'STRATEGY_REFUSE',23,NULL,'2017-04-10 11:19:34','2017-04-10 11:19:46',NULL,NULL);");
 
-        while (resultSet.next()) {
-            System.out.println(resultSet.getString("id") + " (" + resultSet.getString("code") + ")");
+        resultSet = statement.executeQuery("select * from api_result_handle");
+
+        int count = resultSet.getMetaData().getColumnCount();
+        while (resultSet.next()){
+            for (int i = 1; i <= count; i++) {
+                String columnName = resultSet.getMetaData().getColumnName(i);
+                String value = resultSet.getString(i);
+                System.out.print(value + "  ");
+            }
+            System.out.println();
         }
 
         statement.close();

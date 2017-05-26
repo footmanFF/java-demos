@@ -8,7 +8,7 @@
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
     <!-- 提供方应用信息，用于计算依赖关系 -->
-    <dubbo:application name="dubbo-test-ddc-client"  />
+    <dubbo:application name="rdc-serverxx"  />
 
     <!-- 使用multicast广播注册中心暴露服务地址 -->
     <dubbo:registry address="zookeeper://127.0.0.1:2181" />
@@ -16,6 +16,6 @@
     <!-- 用dubbo协议在20880端口暴露服务 -->
     <dubbo:protocol name="dubbo" port="20880" />
 
-    <dubbo:reference id="userInfoApi" interface="cn.com.weidai.rdc.api.UserInfoApi" />
+    <dubbo:reference id="userInfoApi" interface="com.weidai.cf.rdc.api.UserInfoApi" version="1.0"/>
 
 </beans>
