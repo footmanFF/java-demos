@@ -18,19 +18,13 @@ public class Cracker {
         List<String> charArray = Arrays.asList(chars.split(""));
         buildAllStr(charArray);
 
-        for(String r : result){
+        for (String r : result) {
             String hashed = sha256(r);
-            if(hashed.equals(hashStr)){
+            if (hashed.equals(hashStr)) {
                 return r;
             }
         }
         return null;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(crackSha256("b8c49d81cb795985c007d78379e98613a4dfc824381be472238dbd2f974e37ae", "deGioOstu"));
-
-        System.out.println(sha256("GoOutside"));
     }
 
     @Test
@@ -40,11 +34,11 @@ public class Cracker {
     }
 
     private static void buildAllStr(List<String> chars) {
-        if(chars.size() == 1){
+        if (chars.size() == 1) {
             result.add(buildLastString(chars.get(0)));
             return;
         }
-        for(String c : chars){
+        for (String c : chars) {
             loaded.add(c);
             List<String> newChars = new LinkedList<>(chars);
             newChars.remove(c);
@@ -52,14 +46,11 @@ public class Cracker {
             loaded.remove(loaded.size() - 1);
 
         }
-        if(!loaded.isEmpty()){
-//            loaded.remove(loaded.size() - 1);
-        }
     }
 
-    private static String buildLastString(String lastWord){
+    private static String buildLastString(String lastWord) {
         StringBuilder stringBuilder = new StringBuilder();
-        for(String str : loaded){
+        for (String str : loaded) {
             stringBuilder.append(str);
         }
         stringBuilder.append(lastWord);
@@ -67,19 +58,19 @@ public class Cracker {
     }
 
     public static String sha256(String base) {
-        try{
+        try {
             MessageDigest digest = MessageDigest.getInstance("SHA-256");
             byte[] hash = digest.digest(base.getBytes("UTF-8"));
             StringBuffer hexString = new StringBuffer();
 
             for (int i = 0; i < hash.length; i++) {
                 String hex = Integer.toHexString(0xff & hash[i]);
-                if(hex.length() == 1) hexString.append('0');
+                if (hex.length() == 1) hexString.append('0');
                 hexString.append(hex);
             }
 
             return hexString.toString();
-        } catch(Exception ex){
+        } catch (Exception ex) {
             throw new RuntimeException(ex);
         }
     }
