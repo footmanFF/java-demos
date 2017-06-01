@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.io.*;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 import java.util.Random;
 
 /**
@@ -17,16 +19,25 @@ public class BigFileSortWithSmallMemory {
     private int numberCount = 1000;
 
     private RandomAccessFile randomAccessFile;
+    private FileChannel fileChannel;
+    private MappedByteBuffer mappedByteBuffer;
     private boolean isShowNumbers = false;
 
     @Before
     public void init() throws Exception {
-        randomAccessFile = new RandomAccessFile(new File(testFilePath), "rwd");
+        randomAccessFile = new RandomAccessFile (new File(testFilePath), "rw");
+        fileChannel = randomAccessFile.getChannel();
+        mappedByteBuffer = fileChannel.map(FileChannel.MapMode.PRIVATE, 0, 4096 * 8 * 8);
     }
 
     @Test
     public void showNumbersByFile() throws Exception {
         saveNumbersToFile();
+    }
+
+    @Test
+    public void sortFileNumbersByNioFileMemoryMap() throws Exception{
+
     }
 
     @Test
