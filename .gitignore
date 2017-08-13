@@ -1,0 +1,17 @@
+.DS_Store
+target/
+.svn/
+*.swp
+*.iml
+.gradle
+/local.properties
+.idea/
+/build
+.project
+.settings/
+.classpath
+*.ipr
+*.iws
+*.pyc
+catalina.home_IS_UNDEFINED/
+META-INF/

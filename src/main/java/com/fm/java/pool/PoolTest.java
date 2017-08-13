@@ -41,9 +41,9 @@ public class PoolTest {
     public void test() {
         ExecutorService executorService = new ThreadPoolExecutor(5, 10,
                 30L, TimeUnit.MILLISECONDS,
-                new LinkedBlockingQueue<Runnable>(10000),
+                new LinkedBlockingQueue(10000),
                 new ThreadPoolExecutor.CallerRunsPolicy());
-
+        
     }
 
 }
