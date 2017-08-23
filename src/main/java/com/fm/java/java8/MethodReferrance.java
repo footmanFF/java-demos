@@ -12,7 +12,7 @@ import java.util.stream.Stream;
  */
 public class MethodReferrance {
 
-    public static void main(String[] args) {
+    public static void main(StringTest[] args) {
         Person[] persons = new Person[10];
 
         /**

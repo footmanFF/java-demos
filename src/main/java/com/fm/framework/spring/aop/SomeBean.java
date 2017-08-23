@@ -15,7 +15,7 @@ public class SomeBean {
 
     public void doThrow(){
         System.out.println("call doThrow ");
-        throw new RuntimeException("RuntimeException throwed");
+        // throw new RuntimeException("RuntimeException throwed");
     }
 
     public String doReturn(){

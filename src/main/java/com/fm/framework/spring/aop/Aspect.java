@@ -30,6 +30,13 @@ public class Aspect {
     private void anyPublicOperation() {}
 
     /**
+     * 尝试创建一个顶级接口的切面
+     * 执行InterfaceTest接口所有子类的public方法
+     */
+    @Pointcut("execution(public * com.fm.framework.spring.aop.InterfaceTest+.*(..))")
+    private void interfaceOperation() {}
+
+    /**
      * 定义一个属于com.fm.framework.spring.aop包的切面
      */
     @Pointcut("within(com.fm.framework.spring.aop.*)")
@@ -92,6 +99,17 @@ public class Aspect {
     private Object doBasicProfiling(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         Object retVal = proceedingJoinPoint.proceed(proceedingJoinPoint.getArgs());
         return retVal;
+    }
+
+    /**
+     * 接口子类所有方法的切面
+     * @param proceedingJoinPoint
+     * @return
+     * @throws Throwable
+     */
+    @Around("interfaceOperation()")
+    private Object aroundInterfaceOperation(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        return proceedingJoinPoint.proceed();
     }
 
     /**

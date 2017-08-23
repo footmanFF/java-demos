@@ -16,12 +16,16 @@ public class FramewrokTest {
     @Autowired
     private SomeBean someBean;
 
+    @Autowired
+    private SubInterfaceTest subInterfaceTest;
+
     @Test
     public void test(){
         someBean.task();
         someBean.doSomeThing("hello world");
         someBean.doReturn();
         someBean.doThrow();
+        subInterfaceTest.print2();
     }
 
 }
