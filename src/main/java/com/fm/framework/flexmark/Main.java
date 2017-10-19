@@ -96,7 +96,8 @@ public class Main {
         // You can re-use parser and renderer instances
         Node document = null;
         try {
-            document = parser.parseReader(new FileReader(new File("/Users/zhangli/cloud/makdowns/tech-review/Java/volatile机制理解.md")));
+            String path = "/Users/zhangli/cloud/makdowns/tech-review/其他/测试markdown.md";
+            document = parser.parseReader(new FileReader(new File(path)));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -104,6 +105,7 @@ public class Main {
         // /Users/zhangli/cloud/temporary/2017_07_30/大数据域.md
 
         String html = renderer.render(document);  // "<p>This is <em>Sparta</em></p>\n
+
         html = wrapGitHubCss(html);
 
         try {
