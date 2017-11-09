@@ -1,6 +1,5 @@
 package com.fm.groovy;
 
-import com.weidai.cf.rdc.common.util.StringUtil;
 import groovy.lang.Binding;
 import groovy.lang.GroovyClassLoader;
 import groovy.lang.GroovyObject;
@@ -120,7 +119,7 @@ public class GroovyTest {
     }
 
     private static void gcInfo(){
-        System.out.println(StringUtil.format("YGC: {} YGCT: {} FGC: {} FGCT: {}", getYoungGC(), getYoungGCTime(), getYoungGCTime(), getFullGCTime()));
+//        System.out.println(StringUtil.format("YGC: {} YGCT: {} FGC: {} FGCT: {}", getYoungGC(), getYoungGCTime(), getYoungGCTime(), getFullGCTime()));
     }
 
     public static long getYoungGC() {
