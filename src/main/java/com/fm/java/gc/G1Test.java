@@ -1,0 +1,24 @@
+package com.fm.java.gc;
+
+import com.fm.util.Utils;
+import org.junit.Test;
+
+/**
+ * @author zhangli on 2017/11/18.
+ */
+public class G1Test {
+
+    /**
+     * -ea -XX:+PrintGCDetails -XX:+UseG1GC
+     */
+    @Test
+    public void test2() {
+        int loop = 100000000;
+        int memory = 1024;   // 1M
+        for (int i = 0; i < loop; i++) {
+            byte[] bs = new byte[memory];
+        }
+        Utils.sleep(30000);
+    }
+    
+}
