@@ -8,5 +8,7 @@ public interface SubInterfaceTest extends InterfaceTest {
     void print();
 
     void print2();
+    
+    String getString();
 
 }

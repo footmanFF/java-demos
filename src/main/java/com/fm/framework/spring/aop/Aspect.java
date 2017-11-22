@@ -109,7 +109,8 @@ public class Aspect {
      */
     @Around("interfaceOperation()")
     private Object aroundInterfaceOperation(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        return proceedingJoinPoint.proceed();
+        Object t = proceedingJoinPoint.proceed();
+        return t;
     }
 
     /**
@@ -120,7 +121,8 @@ public class Aspect {
     @Around("scheduled()")
     private void aroundSchedule(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
         try {
-            proceedingJoinPoint.proceed();
+            Object t = proceedingJoinPoint.proceed();
+            int a = 0;
         } finally {}
     }
 

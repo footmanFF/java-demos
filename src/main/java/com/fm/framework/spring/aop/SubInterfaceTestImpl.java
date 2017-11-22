@@ -23,4 +23,10 @@ public class SubInterfaceTestImpl implements SubInterfaceTest{
         System.out.println("hello boy 2!");
         ttt();
     }
+
+    @Override
+    public String getString() {
+        return "hi boy";
+    }
+    
 }

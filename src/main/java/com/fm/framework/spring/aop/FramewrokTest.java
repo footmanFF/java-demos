@@ -26,6 +26,7 @@ public class FramewrokTest {
         someBean.doReturn();
         someBean.doThrow();
         subInterfaceTest.print2();
+        subInterfaceTest.getString();
     }
 
 }
