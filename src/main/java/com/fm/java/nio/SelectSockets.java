@@ -7,6 +7,11 @@ import java.nio.channels.*;
 import java.util.Iterator;
 
 /**
+ * Simple echo-back server which listens for incoming stream connections 
+ * and echoes back whatever it reads. A single Selector object is used to 
+ * listen to the server socket (to accept new connections) and all the 
+ * active socket channels.
+ *
  * @author zhangli on 2017/11/23.
  */
 public class SelectSockets {
