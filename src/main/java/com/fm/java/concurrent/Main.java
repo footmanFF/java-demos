@@ -14,7 +14,7 @@ public class Main {
          * 设置运行不同时间，看Blocked的循环被中断在哪里，可以测试interrupt作用于
          * sleep和耗时逻辑不同的表现。前者
          */
-        int sleep = 1650;
+        int sleep = 1940;
         Thread t = new Thread(new Blocked());
         t.start();
         TimeUnit.MILLISECONDS.sleep(sleep);
