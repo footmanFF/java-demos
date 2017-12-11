@@ -25,7 +25,7 @@ public class SomeBean {
 
     @Scheduled
     public void task(){
-        System.out.println("call task");
+        // System.out.println("call task");
     }
 
 

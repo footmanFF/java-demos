@@ -21,7 +21,13 @@ public class FramewrokTest {
 
     @Test
     public void test(){
-        someBean.task();
+        long s = System.currentTimeMillis();
+        for (int i = 0; i < 2000000; i++) {
+            someBean.task();
+        }
+        System.out.println("cost: " + (System.currentTimeMillis() - s));
+        // 2187 1915 1870 1875
+        // 1006 834  917  849
         someBean.doSomeThing("hello world");
         someBean.doReturn();
         someBean.doThrow();

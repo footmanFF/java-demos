@@ -60,7 +60,7 @@ public class Aspect {
      */
     @Before("aopOperation()")
     private void before(JoinPoint joinPoint) {
-        System.out.println("aspect [ " + joinPoint.getTarget().getClass() + " ] before");
+        // System.out.println("aspect [ " + joinPoint.getTarget().getClass() + " ] before");
     }
 
     /**
@@ -68,7 +68,7 @@ public class Aspect {
      */
     @After("aopOperation()")
     private void after() {
-        System.out.println("aspect after");
+        // System.out.println("aspect after");
     }
 
     /**
@@ -118,12 +118,12 @@ public class Aspect {
      * @param proceedingJoinPoint
      * @throws Throwable
      */
-    @Around("scheduled()")
-    private void aroundSchedule(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        try {
-            Object t = proceedingJoinPoint.proceed();
-            int a = 0;
-        } finally {}
-    }
+//    @Around("scheduled()")
+//    private void aroundSchedule(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+//        try {
+//            Object t = proceedingJoinPoint.proceed();
+//            int a = 0;
+//        } finally {}
+//    }
 
 }
