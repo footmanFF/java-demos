@@ -33,6 +33,7 @@ public class FramewrokTest {
         someBean.doThrow();
         subInterfaceTest.print2();
         subInterfaceTest.getString();
+        
     }
 
 }
