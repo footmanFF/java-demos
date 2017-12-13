@@ -36,4 +36,8 @@ public class FramewrokTest {
         
     }
 
+    @Test
+    public void name() throws Exception {
+        subInterfaceTest.print2();   
+    }
 }

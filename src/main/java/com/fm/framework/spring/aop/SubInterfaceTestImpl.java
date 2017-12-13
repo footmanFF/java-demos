@@ -1,5 +1,6 @@
 package com.fm.framework.spring.aop;
 
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
@@ -21,7 +22,7 @@ public class SubInterfaceTestImpl implements SubInterfaceTest{
     @Override
     public void print2() {
         System.out.println("hello boy 2!");
-        ttt();
+        // ttt();
     }
 
     @Override

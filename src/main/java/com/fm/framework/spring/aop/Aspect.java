@@ -8,7 +8,10 @@ import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
+
+import java.lang.reflect.Method;
 
 /**
  * Spring AOP: demo和注释
@@ -54,6 +57,12 @@ public class Aspect {
     @Pointcut("@annotation(org.springframework.scheduling.annotation.Scheduled)")
     private void scheduled(){}
 
+    @Pointcut("@annotation(com.fm.framework.spring.aop.AnnoAop)")
+    private void annoAop(){}
+    
+    @Pointcut("interfaceOperation() && annoAop()")
+    private void combindAnnotationAndInterface(){}
+    
     /**
      * 执行前拦截方法
      * @param joinPoint 切面信息对象
@@ -125,5 +134,13 @@ public class Aspect {
 //            int a = 0;
 //        } finally {}
 //    }
-
+    
+    @Around( "interfaceOperation()" )
+    private void aroundSchedule(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
+        MethodSignature signature = (MethodSignature) proceedingJoinPoint.getSignature();
+        Method method = signature.getMethod();
+        AnnoAop annoAop = method.getAnnotation(AnnoAop.class);
+        proceedingJoinPoint.proceed();
+    }
+    
 }
