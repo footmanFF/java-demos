@@ -16,7 +16,7 @@ import java.util.Iterator;
  */
 public class SelectSockets {
 
-    public static int PORT_NUMBER = 1234;
+    public static int PORT_NUMBER = 8081;
 
     public static void main(String[] argv) throws Exception {
         new SelectSockets().go(argv);

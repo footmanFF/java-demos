@@ -1,8 +1,18 @@
 package com.fm.java.nio;
 
 import org.junit.Test;
+import org.redisson.Redisson;
+import org.redisson.api.RExecutorService;
+import org.redisson.api.RedissonClient;
+import org.redisson.config.Config;
 
+import java.io.BufferedReader;
 import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.InetSocketAddress;
+import java.net.ServerSocket;
+import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
 import java.nio.channels.Selector;
@@ -37,7 +47,36 @@ public class NioDemos {
 
     @Test
     public void name() throws Exception {
-        System.out.println(1 << 2);
+        Config config = new Config();
+        config.setUseLinuxNativeEpoll(true);
+        config.useSingleServer()
+              .setAddress("redis://192.168.16.250:6379");
+        RedissonClient redisson = Redisson.create(config);
+        RExecutorService executor = redisson.getExecutorService("myExecutorService");
+
+        executor.submit(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("11");
+            }
+        });
+    }
+
+    @Test
+    public void name2() throws Exception {
+        Socket socket = new Socket();
+        socket.connect(new InetSocketAddress("127.0.0.1", 8081));
+        OutputStreamWriter outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());
+        outputStreamWriter.write("hello shao nian");
+        
+        BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+        String line;
+        if ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+        Thread.sleep(30000000);
+        outputStreamWriter.close();
+        socket.close();
     }
     
 }
