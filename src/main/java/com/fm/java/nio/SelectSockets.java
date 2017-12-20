@@ -128,7 +128,7 @@ public class SelectSockets {
             // Close channel on EOF, invalidates the key 
             socketChannel.close();
         }
-
+        System.out.println("readDataFromSocket");
     }
 
     /**
@@ -141,6 +141,7 @@ public class SelectSockets {
         buffer.put("Hi there!\r\n".getBytes());
         buffer.flip();
         channel.write(buffer);
+        System.out.println("say hello");
     }
 
 }

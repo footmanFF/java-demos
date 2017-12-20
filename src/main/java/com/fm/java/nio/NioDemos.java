@@ -68,13 +68,16 @@ public class NioDemos {
         socket.connect(new InetSocketAddress("127.0.0.1", 8081));
         OutputStreamWriter outputStreamWriter = new OutputStreamWriter(socket.getOutputStream());
         outputStreamWriter.write("hello shao nian");
-        
+        outputStreamWriter.flush(); 
         BufferedReader reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         String line;
         if ((line = reader.readLine()) != null) {
-            System.out.println(line);
+            System.out.println("-- " + line + " --");
         }
-        Thread.sleep(30000000);
+        Thread.sleep(1000);
+        if ((line = reader.readLine()) != null) {
+            System.out.println("-- " + line + " --");
+        }
         outputStreamWriter.close();
         socket.close();
     }
