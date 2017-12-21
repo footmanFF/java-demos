@@ -57,6 +57,7 @@ public class SelectSockets {
                 SelectionKey key = (SelectionKey) it.next();
                 // Is a new connection coming in? 
                 if (key.isAcceptable()) {
+                    System.out.println("accepted");
                     ServerSocketChannel server = (ServerSocketChannel) key.channel();
                     SocketChannel channel = server.accept();
                     registerChannel(selector, channel, SelectionKey.OP_READ);
@@ -64,6 +65,7 @@ public class SelectSockets {
                 }
                 // Is there data to read on this channel? 
                 if (key.isReadable()) {
+                    System.out.println("read");
                     readDataFromSocket(key);
                 }
                 // Remove key from selected set; it's been handled 
