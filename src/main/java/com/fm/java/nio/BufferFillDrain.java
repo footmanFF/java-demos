@@ -13,6 +13,7 @@ import java.nio.CharBuffer;
  * @version $Id: BufferFillDrain.java,v 1.2 2002/05/19 04:55:41 ron Exp $
  */
 public class BufferFillDrain {
+    
     public static void main(String[] argv)
             throws Exception {
         CharBuffer buffer = CharBuffer.allocate(100);
