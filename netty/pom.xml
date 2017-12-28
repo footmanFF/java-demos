@@ -32,12 +32,5 @@
             <version>4.1.17.Final</version>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>io.netty</groupId>-->
-            <!--<artifactId>netty-transport-native-kqueue</artifactId>-->
-            <!--<version>4.1.17.Final</version>-->
-            <!--<classifier>macos-x86_64</classifier>-->
-        <!--</dependency>-->
-        
     </dependencies>
 </project>
