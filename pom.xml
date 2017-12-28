@@ -134,31 +134,6 @@
                 <version>3.4.4</version>
             </dependency>
 
-
-            <!--<dependency>-->
-            <!--<groupId>com.jooq</groupId>-->
-            <!--<artifactId>jooq-3.9.2</artifactId>-->
-            <!--<version>3.9.2</version>-->
-            <!--<scope>system</scope>-->
-            <!--<systemPath>${project.basedir}/lib/jooq-3.9.2.jar</systemPath>-->
-            <!--</dependency>-->
-
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq</artifactId>
-                <version>3.9.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-meta</artifactId>
-                <version>3.9.1</version>
-            </dependency>
-            <dependency>
-                <groupId>org.jooq</groupId>
-                <artifactId>jooq-codegen</artifactId>
-                <version>3.9.1</version>
-            </dependency>
-
             <dependency>
                 <groupId>com.querydsl</groupId>
                 <artifactId>querydsl-sql</artifactId>
@@ -183,7 +158,6 @@
                 <artifactId>hsqldb</artifactId>
                 <version>2.4.0</version>
             </dependency>
-            <!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
             <dependency>
                 <groupId>org.xerial</groupId>
                 <artifactId>sqlite-jdbc</artifactId>
