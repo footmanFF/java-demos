@@ -11,8 +11,15 @@
     <modules>
         <module>netty</module>
         <module>origin</module>
+        <module>dubbo</module>
     </modules>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.6.RELEASE</version>
+    </parent>
+    
     <properties>
         <spring.version>4.3.4.RELEASE</spring.version>
     </properties>
