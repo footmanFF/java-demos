@@ -20,4 +20,8 @@ public class StringTest extends Utils{
         System.out.println(Arrays.asList(new String[]{}));
     }
 
+    public static void main(String[] args) {
+        System.out.println("aa");
+    }
+    
 }

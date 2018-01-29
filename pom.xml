@@ -12,7 +12,7 @@
         <module>origin</module>
         <module>dubbo</module>
         <module>btree</module>
-  </modules>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
