@@ -12,14 +12,23 @@ import java.util.List;
  */
 public class BTree<V extends Comparable<V>> {
 
-    private Trunk<V> root = new Trunk<>();
+    private Node root;
 
-    public BTree(Trunk<V> root) {
+    public void setTree(Trunk<V> root) {
         this.root = root;
     }
 
+    /**
+     * 往B+树中写入一行数据
+     */
     public void insert(V id, PersistentData data) {
-        // TODO
+        if (root == null) {
+            root = new Leaf<V>();
+            
+        } else {
+            
+        }
+        
     }
 
     /**
@@ -29,9 +38,10 @@ public class BTree<V extends Comparable<V>> {
         if (root == null) {
            throw new RuntimeException("B树未初始化"); 
         }
-        if (root.getHeadItem() == null) {
+        if (root instanceof Leaf && ((Leaf) root).getHeadItem() == null) {
             return Collections.emptyList();
         }
+        // TODO 处理根节点就是叶子的情况
         Node node = root;
         // 从根开始逐层去找满足区间条件的叶子节点
         while (node != null && node instanceof Trunk) {
@@ -93,6 +103,9 @@ public class BTree<V extends Comparable<V>> {
         }
     }
 
+    /**
+     * 从B+树中删除一行数据
+     */
     public void delete(V id) {
         // TODO
     }

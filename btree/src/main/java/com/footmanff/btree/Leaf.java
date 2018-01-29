@@ -2,7 +2,7 @@ package com.footmanff.btree;
 
 /**
  * 树中的叶子节点
- * 
+ *
  * @author zhangli on 26/01/2018.
  */
 public class Leaf<V extends Comparable<V>> implements Node {
@@ -21,6 +21,34 @@ public class Leaf<V extends Comparable<V>> implements Node {
      * 下一个叶子节点
      */
     private Leaf<V> nextLeaf;
+
+    // TODO 增加一个方法来添加LeafItem
+
+    public void addItemInLimit(V v) {
+        if (headItem == null) {
+            headItem = new LeafItem<>();
+            headItem.setLeaf(this);
+            headItem.setValue(v);
+            return;
+        }
+        if (v.compareTo(headItem.getValue()) <= 0) {
+            LeafItem item = new LeafItem<>();
+            item.setLeaf(this);
+            item.setValue(v);
+            item.setNext(headItem);
+            headItem = item;
+            return;
+        }
+        LeafItem<V> item = headItem;
+        
+        while(item != null){
+            LeafItem<V> next = item.getNext();
+            // TODO 
+            
+            item = next;
+        }
+        
+    }
 
     public Trunk<V> getParent() {
         return parent;

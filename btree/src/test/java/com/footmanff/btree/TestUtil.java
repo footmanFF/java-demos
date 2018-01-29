@@ -12,7 +12,8 @@ public class TestUtil {
      */
     public static BTree<String> testTree() {
         Trunk<String> root = new Trunk<>();
-        BTree<String> tree = new BTree<>(root);
+        BTree<String> tree = new BTree<>();
+        tree.setTree(root);
 
         Leaf<String> level3_1 = new Leaf<>();
         Leaf<String> level3_2 = new Leaf<>();
