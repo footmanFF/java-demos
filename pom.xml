@@ -12,7 +12,8 @@
         <module>origin</module>
         <module>dubbo</module>
         <module>btree</module>
-    </modules>
+    <module>jdk-test</module>
+  </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
