@@ -12,8 +12,9 @@
         <module>origin</module>
         <module>dubbo</module>
         <module>btree</module>
-    <module>jdk-test</module>
-  </modules>
+        <module>jdk-test</module>
+        <module>spring</module>
+      </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -41,6 +42,7 @@
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
                 <version>4.12</version>
+                <scope>test</scope>
             </dependency>
             <!--spring start-->
             <dependency>

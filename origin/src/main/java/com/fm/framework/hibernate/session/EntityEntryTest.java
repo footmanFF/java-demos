@@ -3,7 +3,6 @@ package com.fm.framework.hibernate.session;
 import com.fm.framework.base.Employees;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.reflections.Reflections;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.test.context.ContextConfiguration;

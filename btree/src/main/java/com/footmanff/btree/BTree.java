@@ -50,6 +50,7 @@ public class BTree<V extends Comparable<V>> {
                 newLeaf.setHeadItem(rightHead);
 
                 // insert into parent
+                
             }
         }
     }
@@ -69,7 +70,11 @@ public class BTree<V extends Comparable<V>> {
             return;
         }
         Trunk<V> parent = originNode.getParent();
-        
+        if (parent.getItemCount() < ITEM_LIMIT) {
+            // parent.appendItem(newNodeMiniKey, newNode);
+        } else {
+            
+        }
     }
 
     private Leaf<V> findLeaf(V id) {

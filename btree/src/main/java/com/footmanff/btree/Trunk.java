@@ -21,6 +21,11 @@ public class Trunk<V extends Comparable<V>> implements Node<V> {
      * 链表的尾部
      */
     private TrunkItem<V> tailItem;
+
+    /**
+     * 索引节数
+     */
+    private int itemCount = 0;
     
     /**
      * 初始默认使用{@link #Trunk(Node, Node, Comparable)}
@@ -44,22 +49,27 @@ public class Trunk<V extends Comparable<V>> implements Node<V> {
         item.setRight(right);
         headItem = item;
         tailItem = item;
+        itemCount = 1;
     }
 
     /**
-     * 在树干节点的末尾增加一个数据索引项
+     * 在树干节点中新增一个数据索引项
      *
      * @param value   索引值
      * @param subNode 索引指向的子节点
      */
-    public void appendItem(V value, Node subNode) {
-        TrunkItem<V> newItem = new TrunkItem<>();
-        newItem.setLeft(tailItem.getRight());
-        newItem.setRight(subNode);
-        newItem.setValue(value);
-        newItem.setTrunk(this);
-        tailItem.setNext(newItem);
-        tailItem = newItem;
+    public void addItem(V value, Node subNode) {
+        TrunkItem<V> item = headItem;
+        // TODO
+//        if (value.compareTo(item.getValue()) >= 0) {
+//        }
+        while (item != null) {
+            TrunkItem<V> next = item.getNext();
+            if (value.compareTo(item.getValue()) >= 0 && (next == null || value.compareTo(next.getValue()) <= 0)) {
+                break;
+            }
+            item = next;
+        }
     }
 
     @Override
@@ -94,5 +104,8 @@ public class Trunk<V extends Comparable<V>> implements Node<V> {
         this.tailItem = tailItem;
         return this;
     }
-    
+
+    public int getItemCount() {
+        return itemCount;
+    }
 }

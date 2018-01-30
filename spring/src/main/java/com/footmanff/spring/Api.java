@@ -1,4 +1,4 @@
-package com.fm.framework.spring.aop;
+package com.footmanff.spring;
 
 import java.lang.annotation.*;
 

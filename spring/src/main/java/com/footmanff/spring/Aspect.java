@@ -1,4 +1,4 @@
-package com.fm.framework.spring.aop;
+package com.footmanff.spring;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -36,7 +36,7 @@ public class Aspect {
      * 尝试创建一个顶级接口的切面
      * 执行InterfaceTest接口所有子类的public方法
      */
-    @Pointcut("execution(public * com.fm.framework.spring.aop.InterfaceTest+.*(..))")
+    @Pointcut("execution(public * com.footmanff.spring.InterfaceTest+.*(..))")
     private void interfaceOperation() {}
 
     /**
@@ -57,7 +57,7 @@ public class Aspect {
     @Pointcut("@annotation(org.springframework.scheduling.annotation.Scheduled)")
     private void scheduled(){}
 
-    @Pointcut("@annotation(com.fm.framework.spring.aop.AnnoAop)")
+    @Pointcut("@annotation(com.footmanff.spring.AnnoAop)")
     private void annoAop(){}
     
     @Pointcut("interfaceOperation() && annoAop()")
