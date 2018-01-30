@@ -1,5 +1,7 @@
 package com.footmanff.spring;
 
+import com.footmanff.spring.aop.SomeBean;
+import com.footmanff.spring.aop.SubInterfaceTest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
