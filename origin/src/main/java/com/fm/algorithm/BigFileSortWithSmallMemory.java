@@ -10,7 +10,7 @@ import java.nio.channels.FileChannel;
 import java.util.Random;
 
 /**
- * Created by zhangli on 2017/5/15.
+ * Created by footmanff on 2017/5/15.
  */
 public class BigFileSortWithSmallMemory {
 

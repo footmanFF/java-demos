@@ -4,7 +4,7 @@ import org.junit.Test;
 import tech.tablesaw.api.Table;
 
 /**
- * @author zhangli on 2017/9/23.
+ * @author footmanff on 2017/9/23.
  */
 public class TablesawTest {
 

@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 import java.util.stream.Stream;
 
 /**
- * @author zhangli on 2017/8/21.
+ * @author footmanff on 2017/8/21.
  */
 public class MethodReferrance {
 

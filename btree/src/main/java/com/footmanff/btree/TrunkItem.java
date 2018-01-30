@@ -3,7 +3,7 @@ package com.footmanff.btree;
 /**
  * 树干节点的索引项
  * 
- * @author zhangli on 26/01/2018.
+ * @author footmanff on 26/01/2018.
  */
 public class TrunkItem<V extends Comparable<V>> {
 

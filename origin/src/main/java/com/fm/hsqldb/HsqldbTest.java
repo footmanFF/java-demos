@@ -7,7 +7,7 @@ import java.sql.Connection;
 import java.sql.Statement;
 
 /**
- * Created by zhangli on 2017/5/24.
+ * Created by footmanff on 2017/5/24.
  */
 public class HsqldbTest {
 

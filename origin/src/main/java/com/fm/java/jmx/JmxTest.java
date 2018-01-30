@@ -7,7 +7,7 @@ import javax.management.MBeanServerFactory;
 import javax.management.ObjectName;
 
 /**
- * @author zhangli on 2017/10/1.
+ * @author footmanff on 2017/10/1.
  */
 public class JmxTest {
 

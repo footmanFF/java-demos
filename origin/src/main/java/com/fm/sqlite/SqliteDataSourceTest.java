@@ -8,7 +8,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 /**
- * Created by zhangli on 2017/5/26.
+ * Created by footmanff on 2017/5/26.
  */
 public class SqliteDataSourceTest {
 

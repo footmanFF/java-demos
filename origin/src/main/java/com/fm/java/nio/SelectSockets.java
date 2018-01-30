@@ -12,7 +12,7 @@ import java.util.Iterator;
  * listen to the server socket (to accept new connections) and all the 
  * active socket channels.
  *
- * @author zhangli on 2017/11/23.
+ * @author footmanff on 2017/11/23.
  */
 public class SelectSockets {
 

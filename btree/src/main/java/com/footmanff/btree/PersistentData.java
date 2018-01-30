@@ -3,7 +3,7 @@ package com.footmanff.btree;
 /**
  * 模拟持久化的表行
  * 
- * @author zhangli on 26/01/2018.
+ * @author footmanff on 26/01/2018.
  */
 public class PersistentData<K> {
 

@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 
 /**
- * @author zhangli on 2018/1/4.
+ * @author footmanff on 2018/1/4.
  */
 @Configuration
 @ComponentScan( basePackages = "com.footmanff.dubbo" )

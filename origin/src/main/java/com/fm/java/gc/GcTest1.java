@@ -3,7 +3,7 @@ package com.fm.java.gc;
 import org.junit.Test;
 
 /**
- * @author zhangli on 2017/11/9.
+ * @author footmanff on 2017/11/9.
  */
 public class GcTest1 {
     

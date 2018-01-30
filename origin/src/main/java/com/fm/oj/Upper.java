@@ -2,7 +2,7 @@ package com.fm.oj;
 
 /**
  * https://www.codewars.com/kata/makeuppercase
- * Created by zhangli on 2017/5/31.
+ * Created by footmanff on 2017/5/31.
  */
 public class Upper {
 

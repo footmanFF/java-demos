@@ -10,7 +10,7 @@ import java.net.InetAddress;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author zhangli on 2017/9/11.
+ * @author footmanff on 2017/9/11.
  */
 public class ClientTest {
 

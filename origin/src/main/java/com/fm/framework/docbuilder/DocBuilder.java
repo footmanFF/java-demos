@@ -3,7 +3,7 @@ package com.fm.framework.docbuilder;
 import com.sun.tools.javadoc.Main;
 
 /**
- * @author zhangli on 2017/8/12.
+ * @author footmanff on 2017/8/12.
  */
 public class DocBuilder {
 

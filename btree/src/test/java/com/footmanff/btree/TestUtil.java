@@ -1,10 +1,17 @@
 package com.footmanff.btree;
 
 /**
- * @author zhangli on 27/01/2018.
+ * @author footmanff on 27/01/2018.
  */
 public class TestUtil {
 
+    public static Leaf<String> testLeaf() {
+        Leaf<String> leaf = new Leaf<>();
+        leaf.addItemInLimit("Srinivasan");
+        leaf.addItemInLimit("Wu");
+        return leaf;
+    }
+    
     /**
      * 构建一个测试数据
      *
@@ -41,95 +48,25 @@ public class TestUtil {
         level3_5.setParent(level2_2);
         level3_6.setParent(level2_2);
 
-        // Wu
-        LeafItem<String> wu = new LeafItem<>();
-        wu.setValue("Wu")
-          .setLeaf(level3_6);
+        level3_6.addItemInLimit("Srinivasan");
+        level3_6.addItemInLimit("Wu");
 
-        // Srinivasan
-        LeafItem<String> srinivasan = new LeafItem<>();
-        srinivasan.setValue("Srinivasan")
-                  .setLeaf(level3_6)
-                  .setNext(wu);
+        level3_5.addItemInLimit("Mozart");
+        level3_5.addItemInLimit("Singh");
+        level3_5.addItemInLimit("Singh");
 
-        // Singh
-        LeafItem<String> singh = new LeafItem<>();
-        singh.setValue("Singh")
-             .setLeaf(level3_5)
-             .setNext(srinivasan);
+        level3_4.addItemInLimit("Gold");
+        level3_4.addItemInLimit("Katz");
+        level3_4.addItemInLimit("Kim");
 
-        // Singh2
-        LeafItem<String> singh2 = new LeafItem<>();
-        singh2.setValue("Singh")
-             .setLeaf(level3_5)
-             .setNext(singh);
-        
-        // Mozart
-        LeafItem<String> mozart = new LeafItem<>();
-        mozart.setValue("Mozart")
-              .setLeaf(level3_5)
-              .setNext(singh2);
+        level3_3.addItemInLimit("Einstein");
+        level3_3.addItemInLimit("ElSaid");
 
-        // Kim
-        LeafItem<String> kim = new LeafItem<>();
-        kim.setValue("Kim")
-           .setLeaf(level3_4)
-           .setNext(mozart);
+        level3_2.addItemInLimit("Caliﬁeri");
+        level3_2.addItemInLimit("Crick");
 
-        // Katz
-        LeafItem<String> katz = new LeafItem<>();
-        katz.setValue("Katz")
-            .setLeaf(level3_4)
-            .setNext(kim);
-
-        // Gold
-        LeafItem<String> gold = new LeafItem<>();
-        gold.setValue("Gold")
-            .setLeaf(level3_4)
-            .setNext(katz);
-
-        // ElSaid
-        LeafItem<String> elSaid = new LeafItem<>();
-        elSaid.setValue("ElSaid")
-              .setLeaf(level3_3)
-              .setNext(gold);
-
-        // Einstein
-        LeafItem<String> einstein = new LeafItem<>();
-        einstein.setValue("Einstein")
-                .setLeaf(level3_3)
-                .setNext(elSaid);
-
-        // Crick
-        LeafItem<String> crick = new LeafItem<>();
-        crick.setValue("Crick")
-             .setLeaf(level3_2)
-             .setNext(einstein);
-
-        // Caliﬁeri
-        LeafItem<String> caliﬁeri = new LeafItem<>();
-        caliﬁeri.setValue("Caliﬁeri")
-                .setLeaf(level3_2)
-                .setNext(crick);
-
-        // Brandt
-        LeafItem<String> brandt = new LeafItem<>();
-        brandt.setValue("Brandt")
-              .setLeaf(level3_1)
-              .setNext(caliﬁeri);
-
-        // Adams
-        LeafItem<String> adams = new LeafItem<>();
-        adams.setValue("Adams")
-             .setLeaf(level3_1)
-             .setNext(brandt);
-
-        level3_1.setHeadItem(adams);
-        level3_2.setHeadItem(caliﬁeri);
-        level3_3.setHeadItem(einstein);
-        level3_4.setHeadItem(gold);
-        level3_5.setHeadItem(mozart);
-        level3_6.setHeadItem(srinivasan);
+        level3_1.addItemInLimit("Adams");
+        level3_1.addItemInLimit("Brandt");
 
         TrunkItem<String> T_caliﬁeri = new TrunkItem<>();
         TrunkItem<String> T_einstein = new TrunkItem<>();
@@ -173,8 +110,24 @@ public class TestUtil {
         return tree;
     }
 
-    public static void main(String[] args) {
-        BTree bTree = TestUtil.testTree();
+    public static BTree<String> testTree2() {
+        BTree<String> tree = new BTree<>();
+        Leaf<String> leaf = new Leaf<>();
+        tree.setTree(leaf);
+
+        // Wu
+        LeafItem<String> wu = new LeafItem<>();
+        wu.setValue("Wu")
+          .setLeaf(leaf);
+
+        // Srinivasan
+        LeafItem<String> srinivasan = new LeafItem<>();
+        srinivasan.setValue("Srinivasan")
+                  .setLeaf(leaf)
+                  .setNext(wu);
+
+        leaf.setHeadItem(srinivasan);
+        return tree;
     }
 
 }

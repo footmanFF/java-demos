@@ -11,7 +11,7 @@ import org.junit.Test;
 import java.io.InputStream;
 
 /**
- * Created by zhangli on 2017/5/2.
+ * Created by footmanff on 2017/5/2.
  */
 public class MyBatisBaseTest {
 

@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * @author zhangli on 2017/11/5.
+ * @author footmanff on 2017/11/5.
  */
 public class BitTest {
 

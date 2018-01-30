@@ -5,7 +5,7 @@ import com.sun.btrace.annotations.*;
 import static com.sun.btrace.BTraceUtils.*;
 
 /**
- * @author zhangli on 2017/12/2.
+ * @author footmanff on 2017/12/2.
  */
 @BTrace
 public class Debug {

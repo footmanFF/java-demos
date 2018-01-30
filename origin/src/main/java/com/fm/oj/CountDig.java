@@ -5,7 +5,7 @@ import org.junit.Test;
 
 /**
  * https://www.codewars.com/kata/566fc12495810954b1000030
- * Created by zhangli on 2017/6/2.
+ * Created by footmanff on 2017/6/2.
  */
 public class CountDig {
 

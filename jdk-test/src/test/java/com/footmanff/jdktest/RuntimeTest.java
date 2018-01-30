@@ -3,7 +3,7 @@ package com.footmanff.jdktest;
 import org.junit.Test;
 
 /**
- * @author zhangli on 29/01/2018.
+ * @author footmanff on 29/01/2018.
  */
 public class RuntimeTest {
 

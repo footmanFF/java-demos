@@ -8,13 +8,14 @@ import java.util.List;
  * B+树对象
  *
  * @param <V> 索引字段类型
- * @author zhangli on 26/01/2018.
+ * @author footmanff on 26/01/2018.
  */
 public class BTree<V extends Comparable<V>> {
 
+    private final int ITEM_LIMIT = 4;
     private Node root;
 
-    public void setTree(Trunk<V> root) {
+    public void setTree(Node root) {
         this.root = root;
     }
 
@@ -23,12 +24,62 @@ public class BTree<V extends Comparable<V>> {
      */
     public void insert(V id, PersistentData data) {
         if (root == null) {
-            root = new Leaf<V>();
-            
+            Leaf<V> leaf = new Leaf<>();
+            leaf.addItemInLimit(id, data);
+            root = leaf;
         } else {
-            
+            // 理论上的B+树，这里的leaf不会为Null
+            Leaf<V> leaf = findLeaf(id);
+            if (leaf.getItemCount() < ITEM_LIMIT) {
+                // 当小于每个叶子可以包含的节点数限制时直接新增节点
+                leaf.addItemInLimit(id, data);
+            } else {
+                // 大于节点数限制，需要分裂叶子节点
+                // 先将新id增加进树叶
+                leaf.addItemInLimit(id, data);
+                // 新建一个叶子并连接进树
+                Leaf<V> newLeaf = new Leaf<>();
+                newLeaf.setParent(leaf.getParent());
+                newLeaf.setNextLeaf(leaf.getNextLeaf());
+                leaf.setNextLeaf(newLeaf);
+
+                // 将数据节点拆分并分配给新叶子和老叶子
+                LeafItem<V> leftTail = leaf.getByIndex(ITEM_LIMIT / 2);
+                LeafItem<V> rightHead = leftTail.getNext();
+                leftTail.setNext(null);
+                newLeaf.setHeadItem(rightHead);
+
+                // insert into parent
+            }
         }
+    }
+
+    /**
+     * 子节点拆分，修改父节点结构以适应B+树结构
+     *
+     * @param originNode     拆分前的子节点
+     * @param newNode        拆分出来的新子节点
+     * @param newNodeMiniKey 新子节点的最小key(最左侧的key)
+     */
+    private void adaptSplitInParent(Node originNode, Node newNode, V newNodeMiniKey) {
+        if (originNode.isRoot()) {
+            Trunk<V> newRoot = new Trunk<>(originNode, newNode, newNodeMiniKey);
+            originNode.setParent(newRoot);
+            newNode.setParent(newRoot);
+            return;
+        }
+        Trunk<V> parent = originNode.getParent();
         
+    }
+
+    private Leaf<V> findLeaf(V id) {
+        Node node = root;
+        // 从根开始逐层去找满足区间条件的叶子节点
+        while (node != null && node instanceof Trunk) {
+            Trunk<V> trunk = (Trunk) node;
+            node = findNextNode(trunk, id);
+        }
+        return (Leaf) node;
     }
 
     /**
@@ -36,25 +87,22 @@ public class BTree<V extends Comparable<V>> {
      */
     public List<PersistentData<V>> find(V id) {
         if (root == null) {
-           throw new RuntimeException("B树未初始化"); 
+            throw new RuntimeException("B树未初始化");
         }
         if (root instanceof Leaf && ((Leaf) root).getHeadItem() == null) {
             return Collections.emptyList();
         }
-        // TODO 处理根节点就是叶子的情况
-        Node node = root;
-        // 从根开始逐层去找满足区间条件的叶子节点
-        while (node != null && node instanceof Trunk) {
-            Trunk<V> trunk = (Trunk)node;
-            node = findNextNode(trunk, id);
+        if (root instanceof Trunk && ((Trunk) root).getHeadItem() == null) {
+            return Collections.emptyList();
         }
-        // 理论上的B+树，这里的node不会为Null
-        Leaf<V> leaf = (Leaf)node;
+
+        // 理论上的B+树，这里的leaf不会为Null
+        Leaf<V> leaf = findLeaf(id);
         LeafItem leafItem = leaf.getHeadItem();
-        
+
         Leaf<V> nextLeaf = leaf;
         List<PersistentData<V>> result = new ArrayList<>();
-        
+
         // 在叶子节点上收集和id一致的数据节点
         while (leafItem != null) {
             if (leafItem.getValue().equals(id)) {
@@ -80,11 +128,11 @@ public class BTree<V extends Comparable<V>> {
 
     /**
      * 查找id在树干节点上对应的满足区间条件的子节点
-     * 
+     *
      * @param trunk 树干节点
-     * @param id 查找的值
+     * @param id    查找的值
      */
-    private Node findNextNode(Trunk<V> trunk, V id){
+    private Node findNextNode(Trunk<V> trunk, V id) {
         TrunkItem<V> thisItem = trunk.getHeadItem(); // 不会为null
         while (id.compareTo(thisItem.getValue()) >= 0) {
             if (id.compareTo(thisItem.getValue()) == 0) {
@@ -113,5 +161,5 @@ public class BTree<V extends Comparable<V>> {
     public void display() {
         // TODO 图形化展示
     }
-    
+
 }

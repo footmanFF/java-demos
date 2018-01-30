@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.function.Predicate;
 
 /**
- * @author zhangli on 2017/8/21.
+ * @author footmanff on 2017/8/21.
  */
 public class Lambda {
 

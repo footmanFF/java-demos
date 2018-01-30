@@ -16,7 +16,7 @@ import java.io.*;
 import java.util.Arrays;
 
 /**
- * @author zhangli on 2017/8/12.
+ * @author footmanff on 2017/8/12.
  */
 public class Main {
 

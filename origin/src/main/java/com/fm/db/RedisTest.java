@@ -7,7 +7,7 @@ import redis.clients.jedis.JedisPoolConfig;
 import java.util.Set;
 
 /**
- * @author zhangli on 2017/11/24.
+ * @author footmanff on 2017/11/24.
  */
 public class RedisTest {
 

@@ -3,7 +3,7 @@ package com.footmanff.btree;
 /**
  * 叶子节点的索引项
  * 
- * @author zhangli on 26/01/2018.
+ * @author footmanff on 26/01/2018.
  */
 public class LeafItem<V extends Comparable<V>> {
 

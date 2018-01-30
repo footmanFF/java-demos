@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 /**
- * @author zhangli on 2017/9/22.
+ * @author footmanff on 2017/9/22.
  */
 public class JoineryTest {
 

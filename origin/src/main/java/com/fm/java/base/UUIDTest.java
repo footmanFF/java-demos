@@ -19,7 +19,7 @@ import java.util.UUID;
 import static org.jooq.impl.DSL.*;
 
 /**
- * Created by zhangli on 2017/5/8.
+ * Created by footmanff on 2017/5/8.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:spring.xml"})

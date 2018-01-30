@@ -5,7 +5,7 @@ import com.sun.javadoc.RootDoc;
 import com.sun.javadoc.Tag;
 
 /**
- * @author zhangli on 2017/8/12.
+ * @author footmanff on 2017/8/12.
  */
 public class ListClass {
 

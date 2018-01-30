@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.lang.management.OperatingSystemMXBean;
 
 /**
- * @author zhangli on 2017/10/2.
+ * @author footmanff on 2017/10/2.
  */
 public class SomeDemos {
 

@@ -4,7 +4,7 @@ import com.fm.util.Utils;
 import org.junit.Test;
 
 /**
- * @author zhangli on 2017/11/18.
+ * @author footmanff on 2017/11/18.
  */
 public class G1Test {
 

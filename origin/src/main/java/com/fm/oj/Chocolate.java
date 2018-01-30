@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 /**
  * https://www.codewars.com/kata/534ea96ebb17181947000ada
- * Created by zhangli on 2017/6/2.
+ * Created by footmanff on 2017/6/2.
  */
 public class Chocolate {
 

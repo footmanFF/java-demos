@@ -3,7 +3,7 @@ package com.fm.framework.base;
 import org.apache.ibatis.annotations.Select;
 
 /**
- * Created by zhangli on 2017/5/2.
+ * Created by footmanff on 2017/5/2.
  */
 public interface EmployeesMapper {
 

@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.util.Arrays;
 
 /**
- * @author zhangli on 2017/8/22.
+ * @author footmanff on 2017/8/22.
  */
 public class StringTest extends Utils{
 

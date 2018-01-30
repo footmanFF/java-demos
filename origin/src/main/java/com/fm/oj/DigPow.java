@@ -5,7 +5,7 @@ import org.junit.Test;
 
 /**
  * https://www.codewars.com/kata/5552101f47fc5178b1000050
- * Created by zhangli on 2017/6/2.
+ * Created by footmanff on 2017/6/2.
  */
 public class DigPow {
 

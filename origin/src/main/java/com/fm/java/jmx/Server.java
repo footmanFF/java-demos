@@ -1,7 +1,7 @@
 package com.fm.java.jmx;
 
 /**
- * @author zhangli on 2017/10/2.
+ * @author footmanff on 2017/10/2.
  */
 public class Server {
 

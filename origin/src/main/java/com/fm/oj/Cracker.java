@@ -6,7 +6,7 @@ import java.util.*;
 
 /**
  * https://www.codewars.com/kata/sha-256-cracker/train/java
- * Created by zhangli on 2017/5/31.
+ * Created by footmanff on 2017/5/31.
  */
 public class Cracker {
 

@@ -18,7 +18,7 @@ import java.nio.channels.FileChannel;
 import java.nio.channels.Selector;
 
 /**
- * Created by zhangli on 2017/5/31.
+ * Created by footmanff on 2017/5/31.
  */
 public class NioDemos {
 

@@ -5,7 +5,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 /**
- * Created by zhangli on 2017/5/1.
+ * Created by footmanff on 2017/5/1.
  */
 @Entity
 @Data

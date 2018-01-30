@@ -4,7 +4,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 /**
- * @author zhangli on 2017/8/23.
+ * @author footmanff on 2017/8/23.
  */
 @Component
 @Api("")
