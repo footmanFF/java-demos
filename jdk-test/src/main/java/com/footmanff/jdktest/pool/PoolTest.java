@@ -2,10 +2,7 @@ package com.footmanff.jdktest.pool;
 
 import org.junit.Test;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 /**
  * Created by footmanff on 2017/5/26.
@@ -40,13 +37,18 @@ public class PoolTest {
      */
     @Test
     public void test() {
-        ExecutorService executorService = new ThreadPoolExecutor(5, 10,
+        ThreadPoolExecutor executorService = new ThreadPoolExecutor(5, 10,
                 30L, TimeUnit.MILLISECONDS,
                 new LinkedBlockingQueue(10000),
                 new ThreadPoolExecutor.CallerRunsPolicy());
-        executorService.submit(() -> {
-            System.out.println("hello");
+        executorService.submit(new Callable<Object>() {
+            @Override
+            public Object call() throws Exception {
+                System.out.println("hello");
+                return "hello";
+            }
         });
+
     }
 
 }

@@ -17,8 +17,16 @@
                         http://www.springframework.org/schema/aop
                         http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
-    <context:component-scan base-package="com.footmanff.spring.aop"/>
+    <context:component-scan base-package="com.footmanff.spring"/>
     
     <aop:aspectj-autoproxy/>
 
+    <bean id="someBean" class="com.footmanff.spring.context2.SomeBean" />
+    
+    <bean id="beanHolder" class="com.footmanff.spring.context2.BeanHolder">
+        <property name="someBean" ref="someBean"/>
+    </bean>
+
+    <tx:annotation-driven/>
+    
 </beans>

@@ -1,7 +1,9 @@
 package com.footmanff.jdktest.concurrent;
 
 import org.junit.Test;
+import sun.misc.Unsafe;
 
+import java.lang.reflect.Field;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -106,16 +108,27 @@ public class SmallDemos {
      */
     @Test
     public void t5() throws Exception {
-        Lock lock = new ReentrantLock();
+        final ReentrantLock lock = new ReentrantLock(true);
 
         lock.lock();
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                lock.lock();
+                lock.unlock();
+            }
+        });
+        t.start();
+        
         try {
             // do something
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            lock.unlock();
+            //lock.unlock();
         }
+        
+        Thread.sleep(Long.MAX_VALUE);
     }
 
 
