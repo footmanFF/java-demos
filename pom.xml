@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>footmanff</groupId>
@@ -14,14 +15,15 @@
         <module>btree</module>
         <module>jdk-test</module>
         <module>spring</module>
-      </modules>
+        <module>quasar</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>1.5.6.RELEASE</version>
     </parent>
-    
+
     <properties>
         <spring.version>4.3.4.RELEASE</spring.version>
     </properties>
@@ -371,6 +373,7 @@
                     <!--</arguments>-->
                 </configuration>
             </plugin>
+
 
         </plugins>
     </build>
