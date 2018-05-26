@@ -20,17 +20,17 @@ public class Lambda {
         evaluate(list, t -> t > 5);
 
         list.stream()
-            .map(n -> n * n)
-            .forEach(n -> System.out.println(n));
+                .map(n -> n * n)
+                .forEach(n -> System.out.println(n));
 
         list.stream()
-            .filter(n -> n % 2 == 0)
-            .forEach(n -> System.out.println(n));
+                .filter(n -> n % 2 == 0)
+                .forEach(n -> System.out.println(n));
 
         list.stream()
-            .map(n -> n * n)
-            .reduce((a, b) -> a + b)
-            .get();
+                .map(n -> n * n)
+                .reduce((a, b) -> a + b)
+                .get();
     }
 
     public static void handleStr(String str, Handler<String> handler) {
