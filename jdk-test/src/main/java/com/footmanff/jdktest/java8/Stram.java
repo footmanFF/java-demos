@@ -58,4 +58,16 @@ public class Stram {
         });
     }
 
+    @Test
+    public void test5() {
+        Map<Integer, String> map = newList("1", "12", "XX", "123", "XXX", "XX", "1")
+                .stream()
+                .collect(Collectors.toMap(String::length, String::toString, (v1, v2) -> {
+                    return v1 + ", " + v2;
+                }));
+        map.forEach((k, v) -> {
+            System.out.println(k + " : " + v);
+        });
+    }
+
 }
