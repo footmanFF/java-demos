@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
 import static com.footmanff.jdktest.Utils.*;
 
 /**
@@ -16,11 +17,11 @@ public class Stram {
         String[] strs = newArray("1", "2", "3");
 
         List list = Arrays.stream(strs)
-                .map((t) -> {
-                    String a = t + "_";
-                    return a;
-                })
-                .collect(Collectors.toList());
+                          .map((t) -> {
+                              String a = t + "_";
+                              return a;
+                          })
+                          .collect(Collectors.toList());
 
         System.out.println(list);
     }
@@ -28,13 +29,13 @@ public class Stram {
     @Test
     public void test2() {
         List list = newList("1", "2", "3").stream()
-                .filter((t) -> {
-                    if (t.equals("1")) {
-                        return false;
-                    }
-                    return true;
-                })
-                .collect(Collectors.toList());
+                                          .filter((t) -> {
+                                              if (t.equals("1")) {
+                                                  return false;
+                                              }
+                                              return true;
+                                          })
+                                          .collect(Collectors.toList());
 
         System.out.println(list);
     }
@@ -96,9 +97,9 @@ public class Stram {
     /**
      * Collectors.toMap例子
      * toMap(Function<? super T, ? extends K> keyMapper,
-     *       Function<? super T, ? extends U> valueMapper,
-     *       BinaryOperator<U> mergeFunction,
-     *       Supplier<M> mapSupplier)
+     * Function<? super T, ? extends U> valueMapper,
+     * BinaryOperator<U> mergeFunction,
+     * Supplier<M> mapSupplier)
      */
     @Test
     public void test7() {
@@ -111,7 +112,20 @@ public class Stram {
                         (v1, v2) -> v1 + " , " + v2,
                         () -> map
                 ));
+    }
 
+    @Test
+    public void test8() {
+        Map<Integer, String> map = new HashMap();
+        new ArrayList<String>()
+                .stream()
+                .collect(Collectors.toMap(
+                        String::length,
+                        s -> s,
+                        (v1, v2) -> v1 + " , " + v2,
+                        () -> map
+                ));
+        System.out.println(map);
     }
 
 }

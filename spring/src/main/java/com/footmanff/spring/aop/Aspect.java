@@ -40,9 +40,14 @@ public class Aspect {
     private void interfaceOperation() {}
 
     /**
+     * 切aop包下所有的类所有的public方法
+     */
+    // Pointcut("execution(public * com.footmanff.spring.aop.*.*(..))")
+    
+    /**
      * 定义一个属于com.fm.framework.spring.aop包的切面
      */
-    @Pointcut("within(com.fm.framework.spring.aop.*)")
+    @Pointcut("within(com.footmanff.spring.aop.*)")
     private void inAopClass() {}
 
     /**

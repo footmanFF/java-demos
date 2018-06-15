@@ -15,7 +15,6 @@
         <module>btree</module>
         <module>jdk-test</module>
         <module>spring</module>
-        <module>quasar</module>
     </modules>
 
     <parent>
@@ -322,19 +321,19 @@
                 <version>1.0.2</version>
             </dependency>
 
+            <dependency>
+                <artifactId>trade-support-api</artifactId>
+                <groupId>com.ggj.center</groupId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <distributionManagement>
-        <repository>
-            <id>weidai.releases</id>
-            <name>Releases</name>
-            <url>http://192.168.17.252:8081/nexus/content/repositories/releases/</url>
-        </repository>
         <snapshotRepository>
-            <id>weidai.snapshots</id>
-            <name>Snapshots</name>
-            <url>http://192.168.17.252:8081/nexus/content/repositories/snapshots/</url>
+            <id>nexus-snapshots</id>
+            <name>Internal Snapshot</name>
+            <url>http://nexus.ops.yangege.cn/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
