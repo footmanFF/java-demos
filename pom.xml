@@ -12,7 +12,7 @@
         <module>netty</module>
         <module>origin</module>
         <module>btree</module>
-        <module>jdk-test</module>
+        <module>jdk</module>
         <module>spring</module>
     </modules>
 
