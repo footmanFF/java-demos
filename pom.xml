@@ -11,7 +11,6 @@
     <modules>
         <module>netty</module>
         <module>origin</module>
-        <module>dubbo</module>
         <module>btree</module>
         <module>jdk-test</module>
         <module>spring</module>
