@@ -28,7 +28,6 @@ public class TestFileBuilder {
                 fileChannel.write(byteBuffer);
                 rowNumber++;
             }
-            System.out.println(fileChannel.position());
             randomAccessFile.close();
         } catch (IOException e) {
             throw new RuntimeException(e);
