@@ -13,7 +13,11 @@
         <module>btree</module>
         <module>jdk</module>
         <module>spring</module>
-    <module>codes</module>
+        <module>codes</module>
+        <module>mockneat</module>
+        <module>flow</module>
+        <module>statemachine-refund</module>
+    <module>assertj-db</module>
   </modules>
 
     <parent>
@@ -28,6 +32,12 @@
 
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>net.andreinc.mockneat</groupId>
+                <artifactId>mockneat</artifactId>
+                <version>0.1.7</version>
+            </dependency>
+
             <dependency>
                 <groupId>com.google.guava</groupId>
                 <artifactId>guava</artifactId>

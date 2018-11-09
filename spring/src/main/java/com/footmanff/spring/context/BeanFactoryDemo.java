@@ -14,12 +14,12 @@ public class BeanFactoryDemo {
 
     @Test
     public void t1(){
-//        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
-//        com.footmanff.spring.context2.BeanHolder beanHolder = (com.footmanff.spring.context2.BeanHolder)ctx.getBean("beanHolder");
-
-        DefaultListableBeanFactory beanRegistry = new DefaultListableBeanFactory();
-        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanRegistry);
-        reader.loadBeanDefinitions("classpath:spring.xml");
+        ApplicationContext ctx = new ClassPathXmlApplicationContext("spring.xml");
+        // com.footmanff.spring.context2.BeanHolder beanHolder = (com.footmanff.spring.context2.BeanHolder)ctx.getBean("beanHolder");
+        BeanHolder beanHolder = ctx.getBean(BeanHolder.class);
+//        DefaultListableBeanFactory beanRegistry = new DefaultListableBeanFactory();
+//        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanRegistry);
+//        reader.loadBeanDefinitions("classpath:spring.xml");
         
     }
     
