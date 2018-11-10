@@ -14,7 +14,7 @@ import java.util.Set;
  * @author footmanff on 2018/10/24.
  */
 @Configuration
-@EnableStateMachineFactory
+@EnableStateMachineFactory( name = "junction1" )
 @WithStateMachine
 public class FlowConfig extends StateMachineConfigurerAdapter<String, String> {
 
