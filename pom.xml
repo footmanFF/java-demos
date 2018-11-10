@@ -18,6 +18,7 @@
         <module>flow</module>
         <module>statemachine-refund</module>
     <module>assertj-db</module>
+    <module>statemachine-choice</module>
   </modules>
 
     <parent>
