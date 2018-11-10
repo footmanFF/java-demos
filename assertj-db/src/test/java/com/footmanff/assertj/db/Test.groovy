@@ -1,5 +1,6 @@
 package com.footmanff.assertj.db
 
+import org.assertj.db.type.Request
 import org.assertj.db.type.Table
 import org.h2.jdbcx.JdbcConnectionPool
 import spock.lang.Specification
@@ -70,7 +71,9 @@ class Test extends Specification {
         conn.close()
 
         Table table = new Table(dataSource, "members")
-        assertThat(table).row().column().value().isEqualTo(1)
+
+        Request request = new Request(dataSource, "select * from albums where id>=11")
+        assertThat(request).hasNumberOfRows(5).row().hasValues(11, "1997-03-03", "Pop", 12, "01:00:08", null)
         
         then:
         1 == 1
