@@ -67,6 +67,21 @@ public class Stram {
     }
 
     /**
+     * Collectors.groupingBy
+     * 根据key归类，并且对value再做一层转化
+     */
+    @Test
+    public void test41() {
+        Map<Integer, List<String>> map = newList("1", "12", "XX", "123", "XXX", "XX", "1")
+                .stream()
+                .collect(Collectors.groupingBy(String::length, Collectors.mapping(String::toLowerCase, Collectors.toList())));
+        
+        map.forEach((k, v) -> {
+            System.out.println(k + " :    " + v);
+        });
+    }
+
+    /**
      * Collectors.toMap
      * key冲突处理策略
      */
