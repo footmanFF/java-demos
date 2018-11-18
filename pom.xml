@@ -17,9 +17,10 @@
         <module>mockneat</module>
         <module>flow</module>
         <module>statemachine-refund</module>
-    <module>assertj-db</module>
-    <module>statemachine-choice</module>
-    <module>groovy-metaprogramming</module>
+        <module>assertj-db</module>
+        <module>statemachine-choice</module>
+        <module>groovy-metaprogramming</module>
+        <module>groovy-metaprogramming-client</module>
   </modules>
 
     <parent>
