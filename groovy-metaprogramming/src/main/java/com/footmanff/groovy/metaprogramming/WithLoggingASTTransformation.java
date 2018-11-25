@@ -15,6 +15,7 @@ import org.codehaus.groovy.control.SourceUnit;
 import org.codehaus.groovy.transform.ASTTransformation;
 import org.codehaus.groovy.transform.GroovyASTTransformation;
 
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -23,9 +24,11 @@ import java.util.List;
 @CompileStatic
 @GroovyASTTransformation( phase = CompilePhase.SEMANTIC_ANALYSIS )
 public class WithLoggingASTTransformation implements ASTTransformation {
-
+    
     @Override
     public void visit(ASTNode[] nodes, SourceUnit sourceUnit) {
+        System.out.println("WithLoggingASTTransformation visit() " + Arrays.asList(nodes));
+
         MethodNode method = (MethodNode) nodes[1];
 
         Statement startMessage = createPrintlnAst("Starting $method.name");

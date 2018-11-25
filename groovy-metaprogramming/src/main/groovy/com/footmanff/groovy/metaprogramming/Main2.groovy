@@ -5,6 +5,7 @@ package com.footmanff.groovy.metaprogramming
  */
 class Main2 {
 
+    @WithLogging
     def greet() {
         println "Hello World"
     }
