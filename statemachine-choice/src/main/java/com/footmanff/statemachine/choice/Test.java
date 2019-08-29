@@ -13,9 +13,10 @@ public class Test {
 
         FlowService engine = (FlowService) ctx.getBean("flowService");
 
-        engine.test();
+//        engine.test();
+//        engine.test2();
         
-        engine.test2();
+        engine.test3();
     }
 
 }

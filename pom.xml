@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>footmanff</groupId>
@@ -21,7 +22,8 @@
         <module>statemachine-choice</module>
         <module>groovy-metaprogramming</module>
         <module>groovy-metaprogramming-client</module>
-  </modules>
+        <module>elasticsearch</module>
+    </modules>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -358,11 +360,14 @@
             <name>Internal Snapshot</name>
             <url>http://nexus.ops.yangege.cn/repository/maven-snapshots/</url>
         </snapshotRepository>
+        <repository>
+            <id>nexus-releases</id>
+            <name>Releases</name>
+            <url>http://nexus.ops.yangege.cn/repository/maven-releases/</url>
+        </repository>
     </distributionManagement>
 
     <build>
-
-
         <finalName>learn-java</finalName>
         <plugins>
             <!-- 设置源文件编码方式 -->

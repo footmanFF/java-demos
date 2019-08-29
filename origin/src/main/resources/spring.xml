@@ -18,12 +18,15 @@
                         http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
 
     <context:component-scan base-package="com.fm.framework"/>
-    <aop:aspectj-autoproxy />
+    <aop:aspectj-autoproxy/>
 
-    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close" >
-        <property name="url" value="jdbc:mysql://127.0.0.1:3306/employees?useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true&amp;characterEncoding=UTF-8"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
+    <!--    mysql -h drdshbgah93jwe4wpublic.drds.aliyuncs.com -u liuyi -p-->
+
+    <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+        <property name="url"
+                  value="jdbc:mysql://drdshbgah93jwe4wpublic.drds.aliyuncs.com:3306/buyer_trade?useUnicode=true&amp;zeroDateTimeBehavior=convertToNull&amp;autoReconnect=true&amp;characterEncoding=UTF-8"/>
+        <property name="username" value="liuyi"/>
+        <property name="password" value="v8jzA9j92nQSULUX"/>
         <!-- 配置初始化大小、最小、最大 -->
         <property name="initialSize" value="10"/>
         <property name="minIdle" value="10"/>
@@ -65,8 +68,12 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
-    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate" >
-        <property name="sessionFactory" ref="sessionFactory" />
+    <bean id="hibernateTemplate" class="org.springframework.orm.hibernate4.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource"></property>
     </bean>
 
 </beans>
